@@ -19,7 +19,7 @@ export function About() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
         whileHover={{ scale: 1.02 }}
-        className="glass-panel p-8 md:p-12 text-left space-y-8"
+        className="glass-panel p-6 sm:p-10 md:p-12 text-left space-y-8"
       >
         <div className="space-y-4">
           <h2 className="text-3xl font-bold tracking-tight">

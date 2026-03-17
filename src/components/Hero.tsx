@@ -20,7 +20,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-foreground">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-foreground">
           João Victor | <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">IA</span>
         </h1>
         

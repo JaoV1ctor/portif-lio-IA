@@ -64,7 +64,7 @@ export function GlowCard({ children, className = "", delay = 0 }: GlowCardProps)
         transformStyle: 'preserve-3d',
         transformPerspective: 1000,
       }}
-      className={`glass-panel p-6 flex flex-col h-full group transition-shadow hover:shadow-[0_8px_30px_rgba(170,59,255,0.15)] relative overflow-hidden ${className}`}
+      className={`glass-panel p-5 sm:p-6 flex flex-col h-full group transition-shadow hover:shadow-[0_8px_30px_rgba(170,59,255,0.15)] relative overflow-hidden ${className}`}
     >
       {/* O Efeito Glow Interno */}
       <div
