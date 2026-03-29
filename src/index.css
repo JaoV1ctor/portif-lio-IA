@@ -1,37 +1,51 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", "Geist Sans", system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, monospace;
-
-  --color-background: #050505;
-  --color-foreground: #F3F4F6;
-  
-  --color-card: rgba(30, 30, 35, 0.4);
-  --color-card-border: rgba(255, 255, 255, 0.08);
-  
-  --color-primary: #aa3bff;
-  --color-primary-foreground: #ffffff;
-}
-
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-  html {
-    scroll-behavior: smooth;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&family=JetBrains+Mono&display=swap');
 
   :root {
-    color-scheme: dark;
+    --color-bg: #FFFFFF;
+    --color-text: #1E293B;
+    --color-primary: #1E293B; 
+    --color-secondary: #6366F1;
+    --color-accent-1: #10B981;
+    --color-accent-2: #F59E0B;
+    
+    --color-muted: #F3F4F6;
+    --color-glass-bg: rgba(255, 255, 255, 0.7);
+    --color-glass-border: rgba(255, 255, 255, 0.2);
+    --color-glass-shadow: rgba(0, 0, 0, 0.05);
+  }
+
+  .dark {
+    --color-bg: #0F172A; /* Slate 900 */
+    --color-text: #FFFFFF;
+    --color-primary: #FFFFFF;
+    --color-secondary: #818CF8;
+    --color-accent-1: #34D399;
+    --color-accent-2: #FBBF24;
+    
+    --color-muted: #1E293B; /* Slate 800 */
+    --color-glass-bg: rgba(15, 23, 42, 0.7);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+    --color-glass-shadow: rgba(0, 0, 0, 0.2);
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30;
-    margin: 0;
-    min-height: 100vh;
+    @apply antialiased transition-colors duration-300;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Scrollbar base para o terminal e app */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -40,13 +54,94 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+    background: var(--color-text);
+    border-radius: 4px;
+    opacity: 0.2;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
+@theme {
+  --color-brand-primary: var(--color-primary);
+  --color-brand-secondary: var(--color-secondary);
+  --color-brand-accent: var(--color-accent-1);
+  --color-brand-alert: var(--color-accent-2);
+  --color-brand-bg: var(--color-bg);
+  --color-brand-text: var(--color-text);
+  
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
 @layer utilities {
-  .glass-panel {
-    @apply bg-card border border-card-border backdrop-blur-md rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  .liquid-glass {
+    background: var(--color-glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: 0 4px 30px var(--color-glass-shadow);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .mesh-gradient {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-bg);
+    background-image: 
+      radial-gradient(ellipse at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 90% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
+    z-index: -1;
   }
   
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+    z-index: -1;
+    border-radius: inherit;
+    background-size: 200% 100%;
+    animation: beam 3s linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes beam {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, 
+      var(--color-muted) 25%, 
+      var(--color-bg) 50%, 
+      var(--color-muted) 75%);
+    background-size: 200% 100%;
+    animation: loadingShimmer 1.5s infinite linear;
+  }
+
+  @keyframes loadingShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
 }

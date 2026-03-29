@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { PremiumButton } from './ui/PremiumButton';
 
 export function Hero() {
   return (
@@ -15,16 +16,16 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium tracking-wide mb-6">
+          <span className="inline-block py-1 px-3 rounded-full bg-brand-primary/10 text-brand-primary border border-brand-primary/20 text-sm font-medium tracking-wide mb-6">
             ARQUITETANDO INTELIGÊNCIA
           </span>
         </motion.div>
 
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-foreground">
-          João Victor | <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">IA</span>
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-heading font-bold tracking-tight text-brand-text">
+          João Victor | <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-purple-400">IA</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-lg md:text-xl text-brand-text/70 max-w-2xl mx-auto font-light leading-relaxed">
           Desenvolvedor de IA criando arquiteturas neurais de próxima geração, sistemas de coordenação multiagente e soluções de LLM ajustadas.
         </p>
 
@@ -34,22 +35,16 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          <motion.a 
-            href="#projetos" 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors"
-          >
-            VER PROJETOS
-          </motion.a>
-          <motion.a 
-            href="#contato" 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full bg-card border border-card-border text-foreground hover:bg-card/80 transition-colors"
-          >
-            CONTATO
-          </motion.a>
+          <a href="#projetos">
+            <PremiumButton variant="primary" glow>
+              VER PROJETOS
+            </PremiumButton>
+          </a>
+          <a href="#contato">
+            <PremiumButton variant="secondary">
+              CONTATO
+            </PremiumButton>
+          </a>
         </motion.div>
       </motion.div>
     </section>

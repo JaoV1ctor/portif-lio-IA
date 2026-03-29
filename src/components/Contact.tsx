@@ -16,12 +16,12 @@ export function Contact() {
           className="space-y-12 text-center"
         >
           <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none">
-              <span className="text-foreground block"><ScrambleTitle text="Vamos" delay={0.1} /></span>
-              <span className="text-primary block"><ScrambleTitle text="Conversar?" delay={0.4} /></span>
+            <h2 className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight uppercase leading-none">
+              <span className="text-brand-text block"><ScrambleTitle text="Vamos" delay={0.1} /></span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-brand-accent block"><ScrambleTitle text="Conversar?" delay={0.4} /></span>
             </h2>
-            <p className="text-foreground/70 text-lg mx-auto max-w-sm pt-2">
-              Pronto para elevar o nível tecnológico do seu projeto com soluções de inteligência artificial.
+            <p className="text-brand-text/70 text-lg mx-auto max-w-sm pt-2 font-body">
+              Pronto para elevar o nível tecnológico e o design do seu projeto.
             </p>
           </div>
 
@@ -32,12 +32,12 @@ export function Contact() {
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-4 group"
             >
-              <div className="w-14 h-14 rounded-full border border-card-border bg-background/50 flex items-center justify-center group-hover:border-primary/50 transition-colors shadow-lg">
-                <Mail className="w-6 h-6 text-red-500 group-hover:text-primary transition-colors" />
+              <div className="w-14 h-14 rounded-full liquid-glass flex items-center justify-center group-hover:border-brand-secondary/50 transition-colors shadow-lg">
+                <Mail className="w-6 h-6 text-brand-text/50 group-hover:text-red-500 transition-colors" />
               </div>
-              <div className="text-center">
-                <p className="text-xs font-semibold tracking-wider text-foreground/50 uppercase">Email</p>
-                <p className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">jaions2003@gmail.com</p>
+              <div className="text-center font-body">
+                <p className="text-xs font-semibold tracking-wider text-brand-text/50 uppercase">Email</p>
+                <p className="text-sm font-medium text-brand-text group-hover:text-brand-secondary transition-colors">jaions2003@gmail.com</p>
               </div>
             </a>
             
@@ -47,12 +47,12 @@ export function Contact() {
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-4 group"
             >
-              <div className="w-14 h-14 rounded-full border border-card-border bg-background/50 flex items-center justify-center group-hover:border-primary/50 transition-colors shadow-lg">
-                <Instagram className="w-6 h-6 text-pink-500 group-hover:text-primary transition-colors" />
+              <div className="w-14 h-14 rounded-full liquid-glass flex items-center justify-center group-hover:border-brand-secondary/50 transition-colors shadow-lg">
+                <Instagram className="w-6 h-6 text-brand-text/50 group-hover:text-pink-500 transition-colors" />
               </div>
-              <div className="text-center">
-                <p className="text-xs font-semibold tracking-wider text-foreground/50 uppercase">Instagram</p>
-                <p className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">@jao.cfxz</p>
+              <div className="text-center font-body">
+                <p className="text-xs font-semibold tracking-wider text-brand-text/50 uppercase">Instagram</p>
+                <p className="text-sm font-medium text-brand-text group-hover:text-brand-secondary transition-colors">@jao.cfxz</p>
               </div>
             </a>
             
@@ -62,21 +62,21 @@ export function Contact() {
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-4 group"
             >
-              <div className="w-14 h-14 rounded-full border border-card-border bg-background/50 flex items-center justify-center group-hover:border-primary/50 transition-colors shadow-lg">
-                <MessageCircle className="w-6 h-6 text-green-500 group-hover:text-primary transition-colors" />
+              <div className="w-14 h-14 rounded-full liquid-glass flex items-center justify-center group-hover:border-brand-secondary/50 transition-colors shadow-lg">
+                <MessageCircle className="w-6 h-6 text-brand-text/50 group-hover:text-brand-accent transition-colors" />
               </div>
-              <div className="text-center">
-                <p className="text-xs font-semibold tracking-wider text-foreground/50 uppercase">WhatsApp</p>
-                <p className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">+55 (13) 99137-7983</p>
+              <div className="text-center font-body">
+                <p className="text-xs font-semibold tracking-wider text-brand-text/50 uppercase">WhatsApp</p>
+                <p className="text-sm font-medium text-brand-text group-hover:text-brand-secondary transition-colors">+55 (13) 99137-7983</p>
               </div>
             </a>
           </div>
         </motion.div>
       </div>
       
-      <div className="text-center mt-32 mb-8">
-        <p className="text-sm font-mono text-foreground/40">
-          © {new Date().getFullYear()} João Victor IA. Todos os direitos reservados.
+      <div className="text-center mt-32 mb-8 border-t border-brand-primary/10 pt-8 max-w-lg mx-auto">
+        <p className="text-sm font-mono text-brand-text/40">
+          © {new Date().getFullYear()} João Victor. Design por ui-ux-pro-max.
         </p>
       </div>
     </section>
